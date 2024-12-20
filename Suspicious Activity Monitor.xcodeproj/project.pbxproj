@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1801FC7B2D1579CB008D7FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1801FC622D1579CA008D7FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1801FC692D1579CA008D7FCA;
+			remoteInfo = "Suspicious Activity Monitor";
+		};
+		1801FC852D1579CB008D7FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1801FC622D1579CA008D7FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1801FC692D1579CA008D7FCA;
+			remoteInfo = "Suspicious Activity Monitor";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1801FC6A2D1579CA008D7FCA /* Suspicious Activity Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Suspicious Activity Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1801FC7A2D1579CB008D7FCA /* Suspicious Activity MonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Suspicious Activity MonitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1801FC842D1579CB008D7FCA /* Suspicious Activity MonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Suspicious Activity MonitorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1801FC6C2D1579CA008D7FCA /* Suspicious Activity Monitor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Suspicious Activity Monitor";
+			sourceTree = "<group>";
+		};
+		1801FC7D2D1579CB008D7FCA /* Suspicious Activity MonitorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Suspicious Activity MonitorTests";
+			sourceTree = "<group>";
+		};
+		1801FC872D1579CB008D7FCA /* Suspicious Activity MonitorUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Suspicious Activity MonitorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1801FC672D1579CA008D7FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC772D1579CB008D7FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC812D1579CB008D7FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1801FC612D1579CA008D7FCA = {
+			isa = PBXGroup;
+			children = (
+				1801FC6C2D1579CA008D7FCA /* Suspicious Activity Monitor */,
+				1801FC7D2D1579CB008D7FCA /* Suspicious Activity MonitorTests */,
+				1801FC872D1579CB008D7FCA /* Suspicious Activity MonitorUITests */,
+				1801FC6B2D1579CA008D7FCA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1801FC6B2D1579CA008D7FCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1801FC6A2D1579CA008D7FCA /* Suspicious Activity Monitor.app */,
+				1801FC7A2D1579CB008D7FCA /* Suspicious Activity MonitorTests.xctest */,
+				1801FC842D1579CB008D7FCA /* Suspicious Activity MonitorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1801FC692D1579CA008D7FCA /* Suspicious Activity Monitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1801FC8E2D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity Monitor" */;
+			buildPhases = (
+				1801FC662D1579CA008D7FCA /* Sources */,
+				1801FC672D1579CA008D7FCA /* Frameworks */,
+				1801FC682D1579CA008D7FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1801FC6C2D1579CA008D7FCA /* Suspicious Activity Monitor */,
+			);
+			name = "Suspicious Activity Monitor";
+			packageProductDependencies = (
+			);
+			productName = "Suspicious Activity Monitor";
+			productReference = 1801FC6A2D1579CA008D7FCA /* Suspicious Activity Monitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1801FC792D1579CB008D7FCA /* Suspicious Activity MonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1801FC912D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity MonitorTests" */;
+			buildPhases = (
+				1801FC762D1579CB008D7FCA /* Sources */,
+				1801FC772D1579CB008D7FCA /* Frameworks */,
+				1801FC782D1579CB008D7FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1801FC7C2D1579CB008D7FCA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1801FC7D2D1579CB008D7FCA /* Suspicious Activity MonitorTests */,
+			);
+			name = "Suspicious Activity MonitorTests";
+			packageProductDependencies = (
+			);
+			productName = "Suspicious Activity MonitorTests";
+			productReference = 1801FC7A2D1579CB008D7FCA /* Suspicious Activity MonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1801FC832D1579CB008D7FCA /* Suspicious Activity MonitorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1801FC942D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity MonitorUITests" */;
+			buildPhases = (
+				1801FC802D1579CB008D7FCA /* Sources */,
+				1801FC812D1579CB008D7FCA /* Frameworks */,
+				1801FC822D1579CB008D7FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1801FC862D1579CB008D7FCA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1801FC872D1579CB008D7FCA /* Suspicious Activity MonitorUITests */,
+			);
+			name = "Suspicious Activity MonitorUITests";
+			packageProductDependencies = (
+			);
+			productName = "Suspicious Activity MonitorUITests";
+			productReference = 1801FC842D1579CB008D7FCA /* Suspicious Activity MonitorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1801FC622D1579CA008D7FCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					1801FC692D1579CA008D7FCA = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					1801FC792D1579CB008D7FCA = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 1801FC692D1579CA008D7FCA;
+					};
+					1801FC832D1579CB008D7FCA = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 1801FC692D1579CA008D7FCA;
+					};
+				};
+			};
+			buildConfigurationList = 1801FC652D1579CA008D7FCA /* Build configuration list for PBXProject "Suspicious Activity Monitor" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1801FC612D1579CA008D7FCA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1801FC6B2D1579CA008D7FCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1801FC692D1579CA008D7FCA /* Suspicious Activity Monitor */,
+				1801FC792D1579CB008D7FCA /* Suspicious Activity MonitorTests */,
+				1801FC832D1579CB008D7FCA /* Suspicious Activity MonitorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1801FC682D1579CA008D7FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC782D1579CB008D7FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC822D1579CB008D7FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1801FC662D1579CA008D7FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC762D1579CB008D7FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1801FC802D1579CB008D7FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1801FC7C2D1579CB008D7FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1801FC692D1579CA008D7FCA /* Suspicious Activity Monitor */;
+			targetProxy = 1801FC7B2D1579CB008D7FCA /* PBXContainerItemProxy */;
+		};
+		1801FC862D1579CB008D7FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1801FC692D1579CA008D7FCA /* Suspicious Activity Monitor */;
+			targetProxy = 1801FC852D1579CB008D7FCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1801FC8C2D1579CB008D7FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1801FC8D2D1579CB008D7FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1801FC8F2D1579CB008D7FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Suspicious Activity Monitor/Preview Content\"";
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-Monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1801FC902D1579CB008D7FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Suspicious Activity Monitor/Preview Content\"";
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-Monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1801FC922D1579CB008D7FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Suspicious Activity Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Suspicious Activity Monitor";
+			};
+			name = Debug;
+		};
+		1801FC932D1579CB008D7FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Suspicious Activity Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Suspicious Activity Monitor";
+			};
+			name = Release;
+		};
+		1801FC952D1579CB008D7FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-MonitorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Suspicious Activity Monitor";
+			};
+			name = Debug;
+		};
+		1801FC962D1579CB008D7FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GM2VB44GZG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zerotaskstudios.SuspiciousActivityMonitor.Suspicious-Activity-MonitorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Suspicious Activity Monitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1801FC652D1579CA008D7FCA /* Build configuration list for PBXProject "Suspicious Activity Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1801FC8C2D1579CB008D7FCA /* Debug */,
+				1801FC8D2D1579CB008D7FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1801FC8E2D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1801FC8F2D1579CB008D7FCA /* Debug */,
+				1801FC902D1579CB008D7FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1801FC912D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity MonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1801FC922D1579CB008D7FCA /* Debug */,
+				1801FC932D1579CB008D7FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1801FC942D1579CB008D7FCA /* Build configuration list for PBXNativeTarget "Suspicious Activity MonitorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1801FC952D1579CB008D7FCA /* Debug */,
+				1801FC962D1579CB008D7FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1801FC622D1579CA008D7FCA /* Project object */;
+}
