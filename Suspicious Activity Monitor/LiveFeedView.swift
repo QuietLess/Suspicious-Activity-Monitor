@@ -1,3 +1,11 @@
+//
+//  LiveFeedView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 20.12.2024.
+//
+
+
 import SwiftUI
 
 struct LiveFeedView: View {
@@ -6,15 +14,5 @@ struct LiveFeedView: View {
     var body: some View {
         WebView(url: streamURL) // Display VDO.Ninja stream
             .edgesIgnoringSafeArea(.all) // Make it full-screen
-    }
-}
-
-struct ContentView: View {
-    var body: some View {
-        // Your VDO.Ninja room URL
-        let streamURL = URL(string: "https://vdo.ninja/?room=yourRoomName&hash=yourHashCode")!
-
-        // Display the live stream in the LiveFeedView
-        LiveFeedView(streamURL: streamURL)
     }
 }

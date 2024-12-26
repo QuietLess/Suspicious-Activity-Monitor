@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 @main
 struct Suspicious_Activity_MonitorApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()  // Make sure this points to the correct root view
         }
     }
 }
+

@@ -1,47 +1,44 @@
-//
-//  FirebaseManager.swift
-//  Suspicious Activity Monitor
-//
-//  Created by Yağız Efe Atasever on 21.12.2024.
-//
-
-
 import FirebaseDatabase
-import UIKit
+import Foundation
 
 class FirebaseManager {
     private let databaseRef = Database.database().reference()
 
-    // Save a log entry to the database
-    func saveLogEntry(logEntry: LogEntry, completion: @escaping (Error?) -> Void) {
-        let logData = [
-            "date": logEntry.date,
-            "object": logEntry.object,
-            "photoBase64": logEntry.photoBase64
-        ]
-        databaseRef.child("logs").childByAutoId().setValue(logData) { error, _ in
-            completion(error)
-        }
-    }
-
-    // Fetch all log entries from the database
     func fetchLogEntries(completion: @escaping ([LogEntry]?, Error?) -> Void) {
         databaseRef.child("logs").observeSingleEvent(of: .value) { snapshot in
-            guard let logs = snapshot.value as? [String: [String: String]] else {
-                completion(nil, nil)
-                return
+            var fetchedLogs: [LogEntry] = []
+
+            // Traverse through object types like "Knife" and "Pistol"
+            for child in snapshot.children {
+                if let objectSnapshot = child as? DataSnapshot {
+                    let objectType = objectSnapshot.key // Object type (e.g., "Knife", "Pistol")
+
+                    for innerChild in objectSnapshot.children {
+                        if let logSnapshot = innerChild as? DataSnapshot,
+                           let data = logSnapshot.value as? [String: Any],
+                           let date = data["date"] as? String,
+                           let confidence = data["confidence"] as? Double,
+                           let photoBase64 = data["photoBase64"] as? String {
+                            let logEntry = LogEntry(
+                                id: logSnapshot.key,
+                                date: date,
+                                object: objectType,
+                                confidence: confidence,
+                                photoBase64: photoBase64
+                            )
+                            fetchedLogs.append(logEntry)
+                        }
+                    }
+                }
             }
 
-            let logEntries = logs.compactMap { _, value -> LogEntry? in
-                guard
-                    let date = value["date"],
-                    let object = value["object"],
-                    let photoBase64 = value["photoBase64"]
-                else { return nil }
-
-                return LogEntry(date: date, object: object, photoBase64: photoBase64)
+            DispatchQueue.main.async {
+                completion(fetchedLogs, nil)
             }
-            completion(logEntries, nil)
+        } withCancel: { error in
+            DispatchQueue.main.async {
+                completion(nil, error)
+            }
         }
     }
 }
