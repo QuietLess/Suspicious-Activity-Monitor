@@ -10,8 +10,8 @@ import SwiftUI
 struct LogsView: View {
     @State private var logEntries: [LogEntry] = []
     @State private var isLoading = true
-    @State private var selectedImage: UIImage? = nil  // Image for full-screen view
-    @State private var isFullScreen = false          // Toggle for full-screen view
+    @State private var selectedImage: UIImage? = nil
+    @State private var isFullScreen = false
     private let firebaseManager = FirebaseManager()
 
     var body: some View {

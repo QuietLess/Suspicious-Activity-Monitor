@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 19.12.2024.
+//
+
 import FirebaseDatabase
 import Foundation
 
@@ -8,10 +15,10 @@ class FirebaseManager {
         databaseRef.child("logs").observeSingleEvent(of: .value) { snapshot in
             var fetchedLogs: [LogEntry] = []
 
-            // Traverse through object types like "Knife" and "Pistol"
+            // obje tiplerinde traverse et -> knife varsa pistol varsa falan filan
             for child in snapshot.children {
                 if let objectSnapshot = child as? DataSnapshot {
-                    let objectType = objectSnapshot.key // Object type (e.g., "Knife", "Pistol")
+                    let objectType = objectSnapshot.key // Obje türü knife ve pistol
 
                     for innerChild in objectSnapshot.children {
                         if let logSnapshot = innerChild as? DataSnapshot,

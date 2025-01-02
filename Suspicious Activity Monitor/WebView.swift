@@ -20,6 +20,6 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // If you need to handle any updates, you can implement this method
+        //update yok
     }
 }

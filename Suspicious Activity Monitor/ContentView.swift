@@ -11,25 +11,33 @@ import UIKit
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            VStack {
-                
-                // Button to go to Activity Logs
+            VStack(spacing: 20) { // Added spacing for better layout
                 NavigationLink(destination: LogsView()) {
                     Text("Activity Logs")
                         .foregroundColor(.white)
                         .padding()
-                        .frame(maxWidth: .infinity) // Make it look like a button
+                        .frame(maxWidth: .infinity)
                         .background(Color.green)
                         .cornerRadius(10)
                 }
-                
-                // Button to go to Live Feed View (VDO.Ninja)
+
                 NavigationLink(destination: LiveFeedView(streamURL: URL(string: "http://192.168.1.105:5000/video_feed")!)) {
                     Text("Live Feed")
-                        .foregroundColor(.white) // Ensure the text is visible
+                        .foregroundColor(.white)
                         .padding()
-                        .frame(maxWidth: .infinity) // Make it look like a button
+                        .frame(maxWidth: .infinity)
                         .background(Color.blue)
+                        .cornerRadius(10)
+                }
+
+                Button(action: {
+                    callEmergencyNumber()
+                }) {
+                    Text("Call Emergency 112")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
                         .cornerRadius(10)
                 }
             }
@@ -38,7 +46,13 @@ struct ContentView: View {
         }
     }
 
-    
-    
+    private func callEmergencyNumber() {
+        let phoneNumber = "tel://05078682320" //112 arayıp durmayalım diye tolganın numarası bu
+        if let url = URL(string: phoneNumber), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            print("Cannot make a phone call on this device.")
+        }
+    }
 }
 

@@ -12,12 +12,12 @@ struct FullScreenImageView: View {
     let image: UIImage
     @Environment(\.dismiss) var dismiss
 
-    @State private var scale: CGFloat = 1.0  // For pinch-to-zoom
-    @State private var offset = CGSize.zero // For drag-to-dismiss
+    @State private var scale: CGFloat = 1.0 
+    @State private var offset = CGSize.zero
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()  // Background color
+            Color.black.ignoresSafeArea()
 
             Image(uiImage: image)
                 .resizable()
@@ -30,10 +30,10 @@ struct FullScreenImageView: View {
                             offset = gesture.translation
                         }
                         .onEnded { _ in
-                            if abs(offset.height) > 150 {  // Drag threshold
+                            if abs(offset.height) > 150 {
                                 dismiss()
                             } else {
-                                offset = .zero  // Snap back if below threshold
+                                offset = .zero
                             }
                         }
                 )
@@ -43,7 +43,7 @@ struct FullScreenImageView: View {
                             scale = value.magnitude
                         }
                         .onEnded { _ in
-                            if scale < 1.0 { scale = 1.0 }  // Reset zoom level if too small
+                            if scale < 1.0 { scale = 1.0 }
                         }
                 )
         }
