@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct LogsView: View {
     @State private var logEntries: [LogEntry] = []
@@ -22,34 +23,37 @@ struct LogsView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
                 } else {
-                    List(logEntries) { log in
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Date: \(log.date)")
-                                .font(.headline)
-                            Text("Object: \(log.object)")
-                                .font(.subheadline)
-                            Text("Confidence: \(String(format: "%.2f", log.confidence))")
-                                .font(.caption)
-
-                            if let image = decodeImage(from: log.photoBase64) {
-                                Button(action: {
-                                    selectedImage = image
-                                    isFullScreen = true
-                                }) {
-                                    Image(uiImage: image)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 150)
-                                        .cornerRadius(10)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            } else {
-                                Text("Image not available")
-                                    .foregroundColor(.red)
+                    List {
+                        ForEach(logEntries) { log in
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Date: \(log.date)")
+                                    .font(.headline)
+                                Text("Object: \(log.object)")
+                                    .font(.subheadline)
+                                Text("Confidence: \(String(format: "%.2f", log.confidence))")
                                     .font(.caption)
+
+                                if let image = decodeImage(from: log.photoBase64) {
+                                    Button(action: {
+                                        selectedImage = image
+                                        isFullScreen = true
+                                    }) {
+                                        Image(uiImage: image)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: 150)
+                                            .cornerRadius(10)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                } else {
+                                    Text("Image not available")
+                                        .foregroundColor(.red)
+                                        .font(.caption)
+                                }
                             }
+                            .padding(.vertical, 10)
                         }
-                        .padding(.vertical, 10)
+                        .onDelete(perform: deleteLog) // Add swipe-to-delete functionality
                     }
                 }
             }
@@ -61,6 +65,9 @@ struct LogsView: View {
                 if let selectedImage = selectedImage {
                     FullScreenImageView(image: selectedImage)
                 }
+            }
+            .toolbar {
+                EditButton() // Enable edit mode for deleting
             }
         }
     }
@@ -74,6 +81,24 @@ struct LogsView: View {
             }
             isLoading = false
         }
+    }
+
+    private func deleteLog(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let logToDelete = logEntries[index]
+            let objectType = logToDelete.object
+            let logID = logToDelete.id
+
+            let databaseRef = Database.database().reference().child("logs").child(objectType).child(logID)
+            databaseRef.removeValue { error, _ in
+                if let error = error {
+                    print("Error deleting log: \(error.localizedDescription)")
+                } else {
+                    print("Log deleted successfully.")
+                }
+            }
+        }
+        logEntries.remove(atOffsets: offsets) // Remove the log from the local list
     }
 
     private func decodeImage(from base64String: String) -> UIImage? {
