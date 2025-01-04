@@ -1,32 +1,21 @@
 import SwiftUI
 
 struct CameraSelectionView: View {
-    let linkedCameras: [String: String] // Camera ID and URL
-    @Binding var selectedCameraID: String? // Selected camera ID
+    let cameraOptions: [String: String]
+    let onSelect: (URL) -> Void
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(linkedCameras.keys.sorted(), id: \.self) { cameraID in
+            List(cameraOptions.keys.sorted(), id: \.self) { cameraName in
+                if let urlString = cameraOptions[cameraName], let url = URL(string: urlString) {
                     Button(action: {
-                        selectedCameraID = cameraID
+                        onSelect(url)
                     }) {
-                        HStack {
-                            Text(cameraID)
-                            if selectedCameraID == cameraID {
-                                Spacer()
-                                Image(systemName: "checkmark")
-                                    .foregroundColor(.blue)
-                            }
-                        }
+                        Text(cameraName)
                     }
                 }
             }
             .navigationTitle("Select a Camera")
-            .navigationBarItems(trailing: Button("Done") {
-                // Close the sheet
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            })
         }
     }
 }

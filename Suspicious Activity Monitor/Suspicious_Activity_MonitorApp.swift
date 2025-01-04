@@ -1,39 +1,33 @@
-//
-//  Suspicious_Activity_MonitorApp.swift
-//  Suspicious Activity Monitor
-//
-//  Created by Yağız Efe Atasever on 20.12.2024.
-//
-
 import SwiftUI
 import FirebaseCore
-import FirebaseFirestore
-import FirebaseAuth
 import FirebaseDatabase
 import UserNotifications
 
 @main
 struct Suspicious_Activity_MonitorApp: App {
+    @State private var isLoggedIn = false // Track login state
+    @State private var userEmail = "" // Store the logged-in user's email
+
     init() {
         // Configure Firebase
         FirebaseApp.configure()
-        // Request notification permissions
         requestNotificationPermission()
-        // Send a test notification to verify functionality
         sendTestNotification()
-        // Set up Firebase observer for logs
         setupFirebaseObserver()
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isLoggedIn {
+                ContentView(isLoggedIn: $isLoggedIn, userEmail: $userEmail) // Pass state and email
+            } else {
+                LoginView(isLoggedIn: $isLoggedIn, userEmail: $userEmail) // Pass state and email
+            }
         }
     }
 
+    // Request notification permissions from the user
     private func requestNotificationPermission() {
-        print("Requesting notification permission...")
-
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
                 print("Notification permission error: \(error.localizedDescription)")
@@ -43,8 +37,8 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
+    // Send a test notification to verify functionality
     private func sendTestNotification() {
-        print("Sending a test notification...")
         let content = UNMutableNotificationContent()
         content.title = "Test Notification"
         content.body = "This is a test notification to verify local notifications."
@@ -62,41 +56,26 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
+    // Set up Firebase observer for "Knife" and "Pistol" logs
     private func setupFirebaseObserver() {
         let databaseRef = Database.database().reference().child("logs")
         print("Setting up Firebase observer for Knife and Pistol logs...")
 
         ["Knife", "Pistol"].forEach { objectType in
             databaseRef.child(objectType).observe(.childAdded) { snapshot in
-                print("New \(objectType) log detected: \(snapshot)")
-
-                if snapshot.exists() {
-                    print("Snapshot exists for \(objectType): \(snapshot.key)")
-
-                    if let data = snapshot.value as? [String: Any] {
-                        print("Raw data for \(objectType): \(data)")
-
-                        if let date = data["date"] as? String {
-                            print("Extracted date for \(objectType): \(date)")
-
-                            // Trigger a local notification
-                            sendNotification(objectType: objectType, date: date)
-                        } else {
-                            print("Error: Could not extract 'date' for \(objectType)")
-                        }
-                    } else {
-                        print("Error: Snapshot value could not be cast to [String: Any]")
-                    }
-                } else {
-                    print("Error: Snapshot does not exist for \(objectType)")
+                guard let data = snapshot.value as? [String: Any],
+                      let date = data["date"] as? String else {
+                    print("Error: Invalid snapshot for \(objectType)")
+                    return
                 }
+                print("New \(objectType) log detected: \(snapshot.key)")
+                sendNotification(objectType: objectType, date: date)
             }
         }
     }
 
+    // Send a notification when a new log is detected
     private func sendNotification(objectType: String, date: String) {
-        print("Preparing to send notification for \(objectType) detected on \(date)")
-
         let content = UNMutableNotificationContent()
         content.title = "New \(objectType) Log Detected!"
         content.body = "Detected on \(date)"

@@ -1,17 +1,12 @@
-//
-//  ContentView.swift
-//  Suspicious Activity Monitor
-//
-//  Created by Yağız Efe Atasever on 19.12.2024.
-//
-
 import SwiftUI
-import UIKit
 
 struct ContentView: View {
+    @Binding var isLoggedIn: Bool
+    @Binding var userEmail: String
+
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) { // Added spacing for better layout
+            VStack(spacing: 20) {
                 NavigationLink(destination: LogsView()) {
                     Text("Activity Logs")
                         .foregroundColor(.white)
@@ -21,12 +16,23 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
 
-                NavigationLink(destination: LiveFeedView(streamURL: URL(string: "http://192.168.1.105:5000/video_feed")!)) {
+                NavigationLink(destination: LiveFeedView(email: userEmail)) {
                     Text("Live Feed")
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.blue)
+                        .cornerRadius(10)
+                }
+
+                NavigationLink(
+                    destination: AccountPage(isLoggedIn: $isLoggedIn, email: userEmail)
+                ) {
+                    Text("Account Settings")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.orange)
                         .cornerRadius(10)
                 }
 
@@ -47,7 +53,7 @@ struct ContentView: View {
     }
 
     private func callEmergencyNumber() {
-        let phoneNumber = "tel://05078682320" //112 arayıp durmayalım diye tolganın numarası bu
+        let phoneNumber = "tel://05078682320" // 112yi arayıp durmayalım diye tolgayı arıyoruz ama atolga sizi kurtaramaz.
         if let url = URL(string: phoneNumber), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
@@ -55,4 +61,3 @@ struct ContentView: View {
         }
     }
 }
-

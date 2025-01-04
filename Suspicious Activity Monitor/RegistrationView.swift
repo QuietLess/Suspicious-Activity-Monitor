@@ -6,6 +6,8 @@ struct RegistrationView: View {
     @State private var password = ""
     @State private var showError = false
     @State private var errorMessage = ""
+    @Binding var isLoggedIn: Bool
+    @Binding var userEmail: String
 
     var body: some View {
         VStack(spacing: 20) {
@@ -37,16 +39,24 @@ struct RegistrationView: View {
             }
         }
         .padding()
+        .navigationTitle("Register")
     }
 
     private func register() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        guard !email.isEmpty, !password.isEmpty else {
+            showError = true
+            errorMessage = "Please fill in all fields."
+            return
+        }
+
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 showError = true
-                errorMessage = error.localizedDescription
+                errorMessage = "Registration failed: \(error.localizedDescription)"
             } else {
+                isLoggedIn = true
+                userEmail = email
                 showError = false
-                errorMessage = ""
             }
         }
     }
