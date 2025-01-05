@@ -1,3 +1,10 @@
+//
+//  Suspicious_Activity_MonitorApp.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 19.12.2024.
+//
+
 import SwiftUI
 import FirebaseCore
 import FirebaseDatabase
@@ -9,10 +16,10 @@ struct Suspicious_Activity_MonitorApp: App {
     @State private var userEmail = "" // Store the logged-in user's email
 
     init() {
-        // Configure Firebase
+        // Configure Firebase burada
         FirebaseApp.configure()
         requestNotificationPermission()
-        sendTestNotification()
+        //sendTestNotification()
         setupFirebaseObserver()
     }
 
@@ -26,7 +33,10 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
-    // Request notification permissions from the user
+    // iOS her şeyde olduğu gibi notif atmak için de kullanıcıdan izin istiyor.
+    //bu kodu böyle tek yazınca çalışmıyor. XCode uygulama ayarlarında "Signing&Capabilities kısmında
+    //"remote notifications" ayarını da açmamız gerekiyor. Anladık ki swift, tahmin ettiğimizden çok daha fazla şekilde XCode ile entegre
+    //bir dil.
     private func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
@@ -37,7 +47,9 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
-    // Send a test notification to verify functionality
+    // bu test notificatioun fonksiyonu.
+    //apple developer hesabı açamadığımız için aşırı kullanışlı push notificationları, firebase'e entegre şekilde kullanamadık
+    //onun yerine kendimiz manuel bir local notif sistemi yazdık
     private func sendTestNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Test Notification"
@@ -56,7 +68,8 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
-    // Set up Firebase observer for "Knife" and "Pistol" logs
+    // notifler db bazlı olduğu için db'deki pistol ve knife loglarına bakmamız lazım düzenli olarak
+    //yeni log fark edildiği anda notif yollayabilelim
     private func setupFirebaseObserver() {
         let databaseRef = Database.database().reference().child("logs")
         print("Setting up Firebase observer for Knife and Pistol logs...")
@@ -74,7 +87,7 @@ struct Suspicious_Activity_MonitorApp: App {
         }
     }
 
-    // Send a notification when a new log is detected
+    // yeni obje db'ye loglandığında notif yolluyoruz
     private func sendNotification(objectType: String, date: String) {
         let content = UNMutableNotificationContent()
         content.title = "New \(objectType) Log Detected!"

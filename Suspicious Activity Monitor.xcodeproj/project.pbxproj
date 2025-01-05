@@ -38,33 +38,9 @@
 		1801FC842D1579CB008D7FCA /* Suspicious Activity MonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Suspicious Activity MonitorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		18C372DB2D16D40400F3E69A /* Exceptions for "Suspicious Activity Monitor" folder in "Suspicious Activity Monitor" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				.swift,
-			);
-			target = 1801FC692D1579CA008D7FCA /* Suspicious Activity Monitor */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		18C372DC2D16D40400F3E69A /* Exceptions for "Suspicious Activity Monitor" folder in "Compile Sources" phase from "Suspicious Activity Monitor" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 1801FC662D1579CA008D7FCA /* Sources */;
-			membershipExceptions = (
-				.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1801FC6C2D1579CA008D7FCA /* Suspicious Activity Monitor */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				18C372DB2D16D40400F3E69A /* Exceptions for "Suspicious Activity Monitor" folder in "Suspicious Activity Monitor" target */,
-				18C372DC2D16D40400F3E69A /* Exceptions for "Suspicious Activity Monitor" folder in "Compile Sources" phase from "Suspicious Activity Monitor" target */,
-			);
 			path = "Suspicious Activity Monitor";
 			sourceTree = "<group>";
 		};
@@ -453,6 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,6 +461,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

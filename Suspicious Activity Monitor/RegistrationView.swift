@@ -1,3 +1,10 @@
+//
+//  RegistrationView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 4.01.2025.
+//
+
 import SwiftUI
 import FirebaseAuth
 
@@ -54,7 +61,7 @@ struct RegistrationView: View {
                 showError = true
                 errorMessage = "Registration failed: \(error.localizedDescription)"
             } else {
-                isLoggedIn = true
+                isLoggedIn = true //registerladığımızda otomatik olarak loginliyoruz.
                 userEmail = email
                 showError = false
             }

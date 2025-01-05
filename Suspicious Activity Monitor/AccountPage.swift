@@ -1,3 +1,10 @@
+//
+//  AccountPage.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 4.01.2025.
+//
+
 import SwiftUI
 import FirebaseDatabase
 
@@ -76,14 +83,15 @@ struct AccountPage: View {
     private func logout() {
         isLoggedIn = false
     }
-
+    
+    //kameraları linkliyorum. her kamera bir ID ve şifreye sahip. burada kullanıcıdan onları girmesini istiyorum
     private func linkCamera() {
         guard !cameraID.isEmpty, !cameraPassword.isEmpty else {
             showError = true
             errorMessage = "Please enter both Camera ID and Password."
             return
         }
-
+        //kullanıcı girdikten sonra database referansını alıp cameras klasörüne gidip bakıyorum böyle bir id ve password'e sahip camera var mı diye
         let databaseRef = Database.database().reference()
         let sanitizedEmail = safeFirebaseKey(from: email)
         databaseRef.child("cameras").child(cameraID).observeSingleEvent(of: .value) { snapshot in
@@ -111,7 +119,7 @@ struct AccountPage: View {
             }
         }
     }
-
+    //yine db referansını alıp kullanıcı mailine gidip (cameralar maillere linkleniyor) cameraID değerini siliyorum.
     private func unlinkCamera(cameraID: String) {
         let databaseRef = Database.database().reference()
         let sanitizedEmail = safeFirebaseKey(from: email)
@@ -125,7 +133,7 @@ struct AccountPage: View {
             }
         }
     }
-
+    //yine db referansı, yine kullanıcı maili aldım, bu sefer sadece mailin altındaki ID'leri fetchledim ki kullanıcı app'de görebilsin
     private func fetchLinkedCameras() {
         let databaseRef = Database.database().reference()
         let sanitizedEmail = safeFirebaseKey(from: email)

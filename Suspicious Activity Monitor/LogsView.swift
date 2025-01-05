@@ -53,7 +53,7 @@ struct LogsView: View {
                             }
                             .padding(.vertical, 10)
                         }
-                        .onDelete(perform: deleteLog) // Add swipe-to-delete functionality
+                        .onDelete(perform: deleteLog) //Swipe to delete.
                     }
                 }
             }
@@ -100,7 +100,9 @@ struct LogsView: View {
         }
         logEntries.remove(atOffsets: offsets) // Remove the log from the local list
     }
-
+    //firebase'de resimler base64 formatında tutuluyor. base64'e burada değil python kodunda çeviriyoruz.
+    //o kod hem encode yapıyor hem de camera yayınını yapıyor
+    //burada ise o resimleri decode ediyoruz ki kullanıcı baksın ne var ne yok.
     private func decodeImage(from base64String: String) -> UIImage? {
         guard let imageData = Data(base64Encoded: base64String) else {
             print("Failed to decode Base64 string")

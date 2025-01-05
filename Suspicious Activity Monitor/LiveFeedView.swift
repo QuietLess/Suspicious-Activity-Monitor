@@ -1,3 +1,10 @@
+//
+//  LiveFeedView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 19.12.2024.
+//
+
 import SwiftUI
 import FirebaseDatabase
 
@@ -7,8 +14,8 @@ struct LiveFeedView: View {
     @State private var showCameraSelection = false
     @State private var isDetected: Bool = false
     @State private var detectedObject: String = "None"
-    @State private var isLoading = true // To show loading state while fetching cameras
-    let email: String // User's email passed to filter linked cameras
+    @State private var isLoading = true // kameralar fetchlenirken load state göstermek için, ama fetch çok kısa sürüyor
+    let email: String // linked cameraları filtrelemek için user emailini passlıyorum
 
     var body: some View {
         Group {
@@ -22,7 +29,7 @@ struct LiveFeedView: View {
                     WebView(url: selectedCameraURL)
                         .edgesIgnoringSafeArea(.all)
 
-                    // Detection Status Overlay
+                    // Detection yazısı
                     VStack {
                         HStack {
                             Spacer()
@@ -102,8 +109,10 @@ struct LiveFeedView: View {
                     DispatchQueue.main.async {
                         detectedObject = objectType
                         isDetected = true
-
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        //neden +9 çünkü objeler 10 saniyede bir db'ye loglanıyor,
+                        //eğer loglara göre değil detectiona göre yaparsam
+                        //notif spamı yiyorum
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9) {
                             isDetected = false
                             detectedObject = "None"
                         }

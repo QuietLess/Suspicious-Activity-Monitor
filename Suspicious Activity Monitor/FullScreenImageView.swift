@@ -25,7 +25,7 @@ struct FullScreenImageView: View {
                 .scaleEffect(scale)
                 .offset(offset)
                 .gesture(
-                    DragGesture()
+                    DragGesture()//resmi hareket ettir
                         .onChanged { gesture in
                             offset = gesture.translation
                         }
@@ -38,7 +38,7 @@ struct FullScreenImageView: View {
                         }
                 )
                 .gesture(
-                    MagnificationGesture()
+                    MagnificationGesture()//resmi büyüt
                         .onChanged { value in
                             scale = value.magnitude
                         }

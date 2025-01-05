@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FirebaseManager.swift
 //  Suspicious Activity Monitor
 //
 //  Created by Yağız Efe Atasever on 19.12.2024.

@@ -7,11 +7,11 @@
 
 
 import Foundation
-
+//burası loglarla alakalı. db'ye kaydedeceğimiz obje loglarının attributeları nelerdir onlar bunlar.
 struct LogEntry: Identifiable, Codable {
-    let id: String          // Random ID under each object type
-    let date: String        // Timestamp of detection
+    let id: String          // Random ID
+    let date: String        // Timestamp
     let object: String      // Object type ("Knife", "Pistol")
-    let confidence: Double  // Confidence score
-    let photoBase64: String // Base64-encoded image
+    let confidence: Double  // Confidence
+    let photoBase64: String // Base64-encoded resim
 }

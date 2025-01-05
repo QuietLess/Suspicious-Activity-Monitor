@@ -1,9 +1,16 @@
+//
+//  CameraSelectionView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 4.01.2025.
+//
+
 import SwiftUI
 
 struct CameraSelectionView: View {
     let cameraOptions: [String: String]
     let onSelect: (URL) -> Void
-
+    //kullanıcının hesabına birden çok cam linklenmişse, livefeed'de istediğini seçebilir
     var body: some View {
         NavigationView {
             List(cameraOptions.keys.sorted(), id: \.self) { cameraName in

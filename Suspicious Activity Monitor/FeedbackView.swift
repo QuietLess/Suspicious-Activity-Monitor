@@ -1,3 +1,11 @@
+//
+//  FeedbackView.swift
+//  Suspicious Activity Monitor
+//
+//  Created by Yağız Efe Atasever on 4.01.2025.
+//
+
+
 import SwiftUI
 import FirebaseDatabase
 
@@ -13,7 +21,7 @@ struct FeedbackView: View {
                 Text("Send Feedback")
                     .font(.largeTitle)
                     .bold()
-
+                //texfieldimiz var, kullanıcı istediği feedbacki giriyor buraya
                 TextField("Enter your feedback here", text: $feedbackText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height: 100)
@@ -54,8 +62,9 @@ struct FeedbackView: View {
             }
         }
     }
-
+    
     private func sendFeedback() {
+        //eğer feedback boşsa sendlemiyoruz
         guard !feedbackText.isEmpty else {
             showErrorMessage = true
             return
@@ -63,7 +72,7 @@ struct FeedbackView: View {
 
         let databaseRef = Database.database().reference().child("feedback")
         let feedbackID = UUID().uuidString
-
+        //feedback boş değilse, feedbacki yollayan kişinin mailini, feedbackini ve timestampini alıp db'ye logluyoruz
         let feedbackData: [String: Any] = [
             "user": email,
             "feedback": feedbackText,
