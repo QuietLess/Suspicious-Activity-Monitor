@@ -1,0 +1,5 @@
+train: labelimg/images/train
+val: labelimg/images/val
+
+nc: 2
+names: ['gun', 'knife']
